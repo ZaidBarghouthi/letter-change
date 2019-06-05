@@ -89,13 +89,13 @@ class WordMorph{
   }
 
   clusters(input) {
+    let dictionary;
     if(typeof input === 'number' && input >= 2 && input <= 12) {
       dictionary = fs.readFileSync(`dic/${input}.txt`).toString().split("\r\n");
     } else {
       dictionary = input;
     }
-
-    // do clustering 
+    
   }
 }
 
