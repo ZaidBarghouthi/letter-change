@@ -2,4 +2,4 @@ const WordMorph = require('./WordMorph.js');
 
 let ob = new WordMorph()
 
-console.log(ob.findPath('some', 'play'));
+console.log(ob.morph('hello', 'plays'));

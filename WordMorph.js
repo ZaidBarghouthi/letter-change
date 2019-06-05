@@ -36,7 +36,7 @@ class WordMorph{
   return matches;
   }
 
-  findPath(start, end, dictionary = null) {
+  morph(start, end, dictionary = null) {
     if(start.length !== end.length) return 'START and END words must be of the some length!.';
     
     if(dictionary === null) {
