@@ -3,12 +3,16 @@ let fs = require('fs');
 function neighbors(root) {  
   const regex = new RegExp(`${root[0]}(?![${root[1]}])[a-z]|(?!${root[0]})[a-z]${root[1]}`);
   const matches = [];
-  dictionary.forEach(function (word, index) {
+  dictionary.forEach(function (word) {
     if(word.match(regex)) {
       matches.push(word);
-      dictionary.splice(index, 1);
     }
   });
+
+  matches.forEach(w => {
+    let i = dictionary.indexOf(w);
+    dictionary.splice(i,1);
+  })
   return matches;
 }
 
