@@ -45,8 +45,18 @@ class WordMorph{
       dictionary = fs.readFileSync(`dic/${length}.txt`).toString().split("\r\n");
     }
     
-    const startIndex = dictionary.indexOf(start);
-    const endIndex = dictionary.indexOf(end);
+		let startIndex = dictionary.indexOf(start);
+		if(startIndex === -1) {
+			dictionary.push(start);
+			startIndex = dictionary.indexOf(start);
+		}
+
+		let endIndex = dictionary.indexOf(end);
+		if(endIndex === -1) {
+			dictionary.push(end);
+			endIndex = dictionary.indexOf(end);
+		}
+
     const visited = Array(dictionary.length).fill(false);
     const parents = Array(dictionary.length).fill(-1);
 
