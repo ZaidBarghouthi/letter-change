@@ -15,8 +15,7 @@ class WordMorph{
         const not = root.slice(i+1 ,i+2);
         const after = root.slice(i+2, length)
         regex.push(`${before}(?!${not})[a-z]${after}`);
-    }
-
+      }
     }
 
     return new RegExp(regex.join('|'));
